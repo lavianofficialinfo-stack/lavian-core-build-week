@@ -39,3 +39,5 @@ export async function POST(request:Request){
     return NextResponse.json({synced:true,mode:"live",spreadsheetId:process.env.GOOGLE_SHEETS_ID,records:{customer:customerId,booking:bookingId,visit:visitId,sale:saleId,products:p.products.length}});
   }catch(error){console.error("Google Sheets sync failed",error);return NextResponse.json({synced:false,mode:"error",message:"Google Sheets sync failed"},{status:502});}
 }
+
+
